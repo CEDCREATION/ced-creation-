@@ -164,19 +164,17 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#9b9ba3;font-size:1
 <section class="quote" id="contact">
   <div class="wrap quote-grid">
     <div class="quote-copy"><div class="kicker">Parlons de votre idée</div><h2>UN PROJET EN TÊTE ?</h2><p>Remplissez le formulaire avec un maximum de détails. Vous pouvez demander un devis, poser une question ou préparer une commande.</p><div class="quote-points"><span>Demande de devis sans engagement</span><span>Projets simples ou spécifiques</span><span>Réponse par e-mail après réception de votre demande</span></div></div>
-  <form id="quoteForm" action="https://formsubmit.co/cedcreation67@gmail.com" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" value="Nouvelle demande de devis CED CREATION">
-     
-      <div class="field"><label for="name">Votre nom *</label><input id="name" name="name" required placeholder="Nom et prénom"></div>
-      <div class="field"><label for="email">Votre e-mail *</label><input id="email" name="email" type="email" required placeholder="vous@exemple.fr"></div>
-      <div class="field"><label for="kind">Type de projet *</label><select id="kind" name="kind" required><option value="">Choisir une catégorie</option><option>T-shirts personnalisés</option><option>Gravure laser</option><option>Cadeaux personnalisés</option><option>Stickers et décorations</option><option>Autre : Impression 3D</option></select></div>
-      <div class="field"><label for="request">Votre demande</label><select id="request" name="request"><option>Demande de devis</option><option>Commande personnalisée</option><option>Question / renseignement</option></select></div>
-      <div class="field"><label for="shirtQuantity">Quantité de T-shirts (si commande de T-shirts)</label><input id="shirtQuantity" name="quantite_tshirts" type="number" min="1" step="1" placeholder="Ex. 10"></div>
-      <div class="field"><label for="shirtSize">Taille (si identique pour tous)</label><select id="shirtSize" name="taille_tshirt"><option value="">Choisir une taille</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>Tailles mélangées (préciser dans le message)</option></select></div>
-      <div class="field"><label for="shirtColor">Couleur du T-shirt</label><input id="shirtColor" name="couleur_tshirt" placeholder="Ex. noir, blanc, rouge"></div>
-      <div class="field"><label for="shirtPlacement">Emplacement du visuel</label><select id="shirtPlacement" name="emplacement_visuel"><option value="">Choisir un emplacement</option><option>Devant</option><option>Dos</option><option>Devant et dos</option><option>Manche</option><option>À définir ensemble</option></select></div>
-      <div class="field full"><label for="details">Décrivez votre projet *</label><textarea id="details" name="details" required placeholder="Décrivez votre demande. Pour les T-shirts, précisez les tailles par quantité si elles sont mélangées, le texte à imprimer et vos souhaits…"></textarea></div>
-      <div class="field full"><label for="upload">Joindre une image ou un logo (facultatif)</label><input id="upload" name="fichier" type="file" accept="image/*,.pdf,.svg"></div>
+    <form id="quoteForm" name="devis" enctype="multipart/form-data">
+      <div class="field"><label for="name">Votre nom *</label><input id="name" name="fi-sender-fullName" required placeholder="Nom et prénom"></div>
+      <div class="field"><label for="email">Votre e-mail *</label><input id="email" name="fi-sender-email" type="email" required placeholder="vous@exemple.fr"></div>
+      <div class="field"><label for="kind">Type de projet *</label><select id="kind" name="fi-select-type_projet" required><option value="">Choisir une catégorie</option><option>T-shirts personnalisés</option><option>Gravure laser</option><option>Cadeaux personnalisés</option><option>Stickers et décorations</option><option>Autre : Impression 3D</option></select></div>
+      <div class="field"><label for="request">Votre demande</label><select id="request" name="fi-select-type_demande"><option>Demande de devis</option><option>Commande personnalisée</option><option>Question / renseignement</option></select></div>
+      <div class="field"><label for="shirtQuantity">Quantité de T-shirts (si commande de T-shirts)</label><input id="shirtQuantity" name="fi-text-quantite_tshirts" type="number" min="1" step="1" placeholder="Ex. 10"></div>
+      <div class="field"><label for="shirtSize">Taille (si identique pour tous)</label><select id="shirtSize" name="fi-select-taille_tshirt"><option value="">Choisir une taille</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option><option>Tailles mélangées (préciser dans le message)</option></select></div>
+      <div class="field"><label for="shirtColor">Couleur du T-shirt</label><input id="shirtColor" name="fi-text-couleur_tshirt" placeholder="Ex. noir, blanc, rouge"></div>
+      <div class="field"><label for="shirtPlacement">Emplacement du visuel</label><select id="shirtPlacement" name="fi-select-emplacement_visuel"><option value="">Choisir un emplacement</option><option>Devant</option><option>Dos</option><option>Devant et dos</option><option>Manche</option><option>À définir ensemble</option></select></div>
+      <div class="field full"><label for="details">Décrivez votre projet *</label><textarea id="details" name="fi-text-details" required placeholder="Décrivez votre demande. Pour les T-shirts, précisez les tailles par quantité si elles sont mélangées, le texte à imprimer et vos souhaits…"></textarea></div>
+      <div class="field full"><label for="upload">Joindre une image ou un logo (facultatif)</label><input id="upload" name="fi-file-fichier" type="file" accept="image/*,.pdf,.svg"></div>
       <div class="success" id="successMsg" role="status">Votre demande a été envoyée. Merci pour votre message !</div>
       <button class="btn form-submit" type="submit">Envoyer ma demande ↗</button>
       <p class="form-note">Les champs marqués * sont obligatoires. N’ajoutez pas d’informations sensibles dans le formulaire.</p>
@@ -187,6 +185,45 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#9b9ba3;font-size:1
 <footer><div class="wrap footer-row"><div><div class="footer-brand">CED CREATION</div><div>La création sur mesure.</div></div><div>Découpe laser · Stickers · Impression 3D · Sur mesure</div><div>© <span id="year"></span> CED CREATION</div></div></footer>
 
 <div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="modal-box"><div class="modal-head"><h3 id="cartTitle">Ma demande</h3><button class="close" onclick="closeCart()" aria-label="Fermer">×</button></div><p>Voici les idées que vous souhaitez inclure dans votre demande de devis :</p><ul class="cart-list" id="cartList"></ul><p class="cart-empty" id="cartEmpty">Votre sélection est vide pour le moment.</p><button class="btn" onclick="sendCartToForm()">Continuer vers le formulaire ↗</button></div></div>
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
+<script>
+(function(){
+  const form = document.getElementById('quoteForm');
+  if (!form) return;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const successMessage = document.getElementById('successMsg');
+  const errorMessage = document.createElement('div');
+  errorMessage.className = 'success';
+  errorMessage.style.background = '#f8e8e8';
+  errorMessage.style.borderColor = '#d78383';
+  errorMessage.setAttribute('role', 'alert');
+  errorMessage.style.display = 'none';
+  form.insertBefore(errorMessage, submitButton);
+  const forminit = new Forminit();
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const originalText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Envoi en cours…';
+    errorMessage.style.display = 'none';
+    successMessage.style.display = 'none';
+    try {
+      const formData = new FormData(form);
+      const result = await forminit.submit('06p34gmyhpz', formData);
+      if (result.error) throw new Error(result.error.message || 'Échec de l’envoi.');
+      successMessage.style.display = 'block';
+      form.reset();
+    } catch (error) {
+      errorMessage.textContent = 'Votre demande n’a pas pu être envoyée : ' + (error.message || 'Veuillez réessayer.');
+      errorMessage.style.display = 'block';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }
+  });
+})();
+</script>
 <script>
 const cart=[];
 function updateCart(){document.getElementById('cartCount').textContent=cart.length;const list=document.getElementById('cartList');list.innerHTML='';document.getElementById('cartEmpty').style.display=cart.length?'none':'block';cart.forEach((item,i)=>{const li=document.createElement('li');const label=document.createElement('span');label.textContent=item;const remove=document.createElement('button');remove.textContent='Retirer';remove.className='btn outline small';remove.style.color='#111';remove.style.borderColor='#aaa';remove.onclick=()=>{cart.splice(i,1);updateCart()};li.append(label,remove);list.appendChild(li)})}
